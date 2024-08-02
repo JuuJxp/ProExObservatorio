@@ -98,8 +98,8 @@ const Header: React.FC = () => {
                         // Se for uma string, não precisa acessar o name do objeto só exibir.
                         <>
                           {/* O subItem de pesquisa possui um ícone de pesquisa */}
-                          {subItem === 'Pesquisa' && <BsSearch style={{ marginRight: '8px' }} />}
                           {subItem}
+                          {subItem === 'Pesquisa' && <BsSearch style={{ marginLeft: '8px' }} />}
                         </>
                       ) : (
                         subItem.name

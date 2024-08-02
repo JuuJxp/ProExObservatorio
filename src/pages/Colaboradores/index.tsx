@@ -52,7 +52,7 @@ const teamData: TeamSection[] = [
   }
 ];
 
-const Team: React.FC = () => {
+const TeamMates: React.FC = () => {
   // Quando o array de times passa de 5 em uma linha, faz uma divisão para descer para a próxima
   const divideArray = (array: Team[], size: number): Team[][] => {
     const result: Team[][] = [];
@@ -93,4 +93,4 @@ const Team: React.FC = () => {
   );
 };
 
-export default Team;
+export default TeamMates;

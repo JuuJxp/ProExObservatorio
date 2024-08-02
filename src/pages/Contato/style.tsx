@@ -10,6 +10,7 @@ export const Input = styled.input`
     padding-left: ${rw(15)};
     box-sizing: border-box;
     font-size: ${rf(16)};
+    border-radius: ${rf(8)};
 `;
 
 export const InputMessage = styled(Input)`
@@ -65,6 +66,7 @@ export const Row = styled.div`
 
 export const InputWrapper = styled.div`
     display: flex;
+    position: relative;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;

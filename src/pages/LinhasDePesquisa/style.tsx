@@ -22,6 +22,7 @@ export const Imagem = styled.img`
     width: ${rw(200)};
     height: ${rw(200)};
     margin-bottom: ${rh(12)};
+    cursor: pointer;
 `;
 
 export const Linhas = styled.div`

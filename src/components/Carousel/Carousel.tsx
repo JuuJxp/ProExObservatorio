@@ -1,12 +1,12 @@
 import React from 'react';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { CarouselContainer, CarouselItem, Image, Info, Subtitle, Title } from './style';
+import { CarouselContainer, CarouselItem, Image, Info, Placeholder, Subtitle, SubtitlePlaceholder, Title, TitlePlaceholder } from './style';
 import Slider from 'react-slick';
 
 interface CarouselProps {
   items: {
-    image: string;
+    image?: string;
     date: string;
     title?: string;
     author?: string;
@@ -45,7 +45,14 @@ const Carousel: React.FC<CarouselProps> = ({ items, showOnlyTitle = false }) => 
       <Slider {...settings}>
         {items.map((item, index) => (
           <CarouselItem key={index}>
-            <Image src={item.image} alt={`Slide ${index + 1}`} />
+            {item.image ? (
+              <Image src={item.image} alt={`Slide ${index + 1}`} />
+            ) : (
+              <Placeholder>
+                <TitlePlaceholder>{item.title}</TitlePlaceholder>
+                <SubtitlePlaceholder>{item.author}</SubtitlePlaceholder>
+              </Placeholder>
+            )}
             <Info>
               <Title>{item.date}</Title>
               {!showOnlyTitle && (
