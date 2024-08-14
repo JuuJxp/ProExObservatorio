@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import ReactWordcloud from 'react-wordcloud';
 import { responsiveHeight } from '../../utils/responsiveUtils';
 
 // Dados de exemplo para a nuvem de palavras
-const words = [
+export const words = [
   { text: 'Habitação', value: 1000 },
   { text: 'Colaboração', value: 900 },
   { text: 'Mapeamento', value: 800 },

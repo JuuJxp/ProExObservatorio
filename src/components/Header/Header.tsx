@@ -17,11 +17,14 @@ const Header: React.FC = () => {
     {
       title: 'BIBLIOTECA',
       items: [
-        { name: 'Projetos', submenu: ['Mapas', 'Gráficos', 'Cidades', 'Palavras-chave'] },
-        { name: 'Extras(Revista)', submenu: ['Artigos', 'Livros', 'Revista'] },
-        'Pesquisa'
-      ],
-      hasIcon: true
+        { name: 'Pesquisas concluídas', submenu: ['Mapas', 'Gráficos', 'Cidades', 'Palavras-chave'] },
+        { name: 'Outras publicações', submenu: ['Artigos', 'Livros', 'Revista'] },
+      ]
+    },
+    {
+      title: 'PESQUISA',
+      items: [],
+      hasIcon: true,
     },
     {
       title: 'CONTATO',
@@ -39,13 +42,13 @@ const Header: React.FC = () => {
       case "Colaboradores":
         navigate('/team');
         break;
-      case "Projetos":
+      case "Pesquisas concluídas":
         navigate('/projects');
         break;
-      case "Extras(Revista)":
+      case "Outras publicações":
         navigate('/extras');
         break;
-      case "Pesquisa":
+      case "PESQUISA":
         navigate('/research');
         break;
       case "CONTATO":

@@ -6,6 +6,7 @@ import { InputWrapper, Label } from '../Contato/style';
 import { InputResearch, SELECT, Container, SearchIcon, FilterTag, ClearButton, Flexend } from './style';
 import { BsSearch, BsX } from 'react-icons/bs';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { researchData } from '../../utils/ResearchData';
 
 interface ResearchItem {
     date: string;
@@ -14,42 +15,8 @@ interface ResearchItem {
     resume: string;
     keywords: string;
     category: string;
+    link: string;
 }
-
-const researchData: ResearchItem[] = [
-    {
-        date: '01/02/2024',
-        title: 'Habitação de interesse social',
-        author: 'Julia Tavares',
-        resume: 'Este estudo investiga a habitação de interesse social no Brasil.',
-        keywords: 'habitação, interesse social, Brasil',
-        category: 'habitação',
-    },
-    {
-        date: '01/01/2024',
-        title: 'Sistemas de Esgoto de São Carlos',
-        author: 'Luisa Tavares',
-        resume: 'Análise dos sistemas de esgoto em São Carlos.',
-        keywords: 'esgoto, São Carlos, análise',
-        category: 'esgoto',
-    },
-    {
-        date: '01/03/2020',
-        title: 'Habitação de populações indígenas',
-        author: 'Natasha Nême',
-        resume: 'Estudo sobre as condições de habitação das populações indígenas.',
-        keywords: 'habitação, indígenas, estudo',
-        category: 'habitação',
-    },
-    {
-        date: '01/04/2022',
-        title: 'Habitação de povos originários em terrenos irregulares',
-        author: 'Sandra Santos',
-        resume: 'falta de dignidade de moradia para povos originários causa grande risco',
-        keywords: 'risco, dignidade habitacional, habitação, povos originários',
-        category: 'habitação'
-    },
-];
 
 const researchOptions = [
     { value: 'title', label: 'Título' },
@@ -138,7 +105,7 @@ const Research: React.FC = () => {
                 </Flexend>
             )}
             <Title> Pesquisas encontradas </Title>
-            <Carousel items={filteredData}/>
+            <Carousel items={filteredData} showOnlyTitle={true}/>
         </>
     );
 };

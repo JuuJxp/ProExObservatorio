@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { responsiveWidth as rw, responsiveHeight as rh, responsiveFontSize as rf} from '../../utils/responsiveUtils';
-
 export const CarouselContainer = styled.div`
   width: 100%;
   padding-inline: ${rw(30)};
@@ -20,6 +19,7 @@ export const Image = styled.img`
   width: 100%;
   height: ${rh(400)};
   border-radius: ${rw(15)};
+  object-fit: contain;
 `;
 
 export const Info = styled.div`

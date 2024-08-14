@@ -1,8 +1,10 @@
 import React from 'react';
 import Header from '../../components/Header/Header';
-import { Container, Group, Imagem, Linha, Linhas, Title } from '../LinhasDePesquisa/style';
+import { Container, Group, Linha, Linhas, Title } from '../LinhasDePesquisa/style';
 import { SecondaryColor } from '../../components/Header/style';
 import cinza from '../../assets/corBase.jpeg'
+import { Img, Label } from './style';
+import pri from '../../assets/pri.jpeg'
 
 interface Team {
   src: string;
@@ -19,34 +21,27 @@ const teamData: TeamSection[] = [
   {
     title: 'Professores',
     members: [
-      { src: cinza, label: 'Julia Tavares', cargo: 'Aluna bolsista' },
-      { src: cinza, label: 'Julia Tavares', cargo: 'Aluna bolsista' },
-      { src: cinza, label: 'Julia Tavares', cargo: 'Aluna bolsista' },
-      { src: cinza, label: 'Julia Tavares', cargo: 'Aluna bolsista' },
-      { src: cinza, label: 'Julia Tavares', cargo: 'Aluna bolsista' },
-      // Adicione mais itens conforme necessário
+      { src: cinza, label: 'Luciana Márcia Gonçalves', cargo: 'Professora' },
+      { src: cinza, label: 'Elza Luli Miyaska', cargo: 'Professora' },
     ]
   },
   {
     title: 'Atuantes no projeto',
     members: [
-      { src: cinza, label: 'Julia Tavares', cargo: 'Aluna bolsista' },
-      { src: cinza, label: 'Julia Tavares', cargo: 'Aluna bolsista' },
-      { src: cinza, label: 'Julia Tavares', cargo: 'Aluna bolsista' },
-      { src: cinza, label: 'Julia Tavares', cargo: 'Aluna bolsista' },
-      { src: cinza, label: 'Julia Tavares', cargo: 'Aluna bolsista' },
-      // Adicione mais itens conforme necessário
+      { src: cinza, label: 'Cláudio Robert Pierini', cargo: 'Pós-doutorando' },
+      { src: cinza, label: 'Tatiane Ferreira Olivatto', cargo: 'Doutoranda' },
+      { src: cinza, label: 'Natasha Nême Gonçalves de Almeida', cargo: 'Mestranda' },
+      { src: pri, label: 'Priscila Kauana Barelli Forcel', cargo: 'Mestranda' },
+      { src: cinza, label: 'Sandra Batista Medeiros', cargo: 'Doutoranda' },
+      { src: cinza, label: 'Gabriella Barreiros da Silva', cargo: 'Mestranda' },
+      { src: cinza, label: 'Julia Neves de Andrade', cargo: 'Doutoranda' },
+      { src: cinza, label: 'Julia Tavares dos Santos', cargo: 'Graduanda' },
     ]
   },
   {
     title: 'Ex-membros',
     members: [
-      { src: cinza, label: 'Julia Tavares', cargo: 'Aluna bolsista' },
-      { src: cinza, label: 'Julia Tavares', cargo: 'Aluna bolsista' },
-      { src: cinza, label: 'Julia Tavares', cargo: 'Aluna bolsista' },
-      { src: cinza, label: 'Julia Tavares', cargo: 'Aluna bolsista' },
-      { src: cinza, label: 'Julia Tavares', cargo: 'Aluna bolsista' },
-      { src: cinza, label: 'Julia Tavares', cargo: 'Aluna bolsista' },
+      { src: "https://www5.pucsp.br/eitt/img/membros/avatar-neutro-barroco.png", label: 'EXEMPLO', cargo: 'EXEMPLO' },
       // Adicione mais itens conforme necessário
     ]
   }
@@ -78,8 +73,8 @@ const TeamMates: React.FC = () => {
                   {group.map((member, memberIndex) => (
                     // No group temos a src da imagem, o nome e o título do colaborador
                     <Linha key={memberIndex}>
-                      <Imagem src={member.src} alt={`member-${sectionIndex}-${memberIndex}`} />
-                      <span>{member.label}</span>
+                      <Img src={member.src} alt={`member-${sectionIndex}-${memberIndex}`} />
+                      <Label>{member.label}</Label>
                       <SecondaryColor>{member.cargo}</SecondaryColor>
                     </Linha>
                   ))}

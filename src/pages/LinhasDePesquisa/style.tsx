@@ -23,6 +23,7 @@ export const Imagem = styled.img`
     height: ${rw(200)};
     margin-bottom: ${rh(12)};
     cursor: pointer;
+    object-fit: cover;
 `;
 
 export const Linhas = styled.div`
@@ -36,6 +37,7 @@ export const Linha = styled.div`
     flex-direction: column;
     align-items: center;
     margin-bottom: ${rh(20)};
+    text-align: center;
 `;
 
 export const Group = styled.div`
@@ -43,5 +45,6 @@ export const Group = styled.div`
   flex-wrap: wrap;
   margin-bottom: ${rh(20)};
   width: 100%;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 6%;
 `;
