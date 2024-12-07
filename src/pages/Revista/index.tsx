@@ -24,8 +24,8 @@ const articlesData = [
     },
     {
       date: '01/01/2024',
-      title: 'Título muito longo de um livro interessante',
-      author: 'Autor: nome do autor que realizou a pesquisa',
+      title: 'Exemplo de título de artigo',
+      author: 'Autor: nome do autor',
     },
     {
       date: '01/01/2024',

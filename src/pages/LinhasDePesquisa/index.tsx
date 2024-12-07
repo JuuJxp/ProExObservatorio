@@ -3,7 +3,8 @@ import Header from '../../components/Header/Header';
 import { Container, Group, Imagem, Linha, Linhas, Title } from './style';
 import cinza from '../../assets/corBase.jpeg'
 import { useNavigate } from 'react-router-dom';
-import { words } from '../../components/WordCloud/WordCloud';
+import { extractKeywords, words } from '../../components/WordCloud/WordCloud';
+import { researchData } from '../../utils/ResearchData';
 
 interface ResearchLine {
   src: string;
@@ -51,8 +52,39 @@ const ResearchLines: React.FC = () => {
 
     return sortedWords;
   };
+  const extractWords = () => {
+    const keywordMap: { [key: string]: number } = {};
+
+    researchData.forEach((item) => {
+      // Normaliza as palavras chaves
+      const keywordsArray = item.keywords.split(';').map(keyword => {
+        // converte para letra minúscula e espaços
+        let normalizedKeyword = keyword.trim().toLowerCase();
+        // Remove os acentos
+        normalizedKeyword = normalizedKeyword.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
+        return normalizedKeyword;
+      });
+      keywordsArray.forEach((keyword) => {
+        if (keywordMap[keyword]) {
+          keywordMap[keyword] += 1;
+        } else {
+          keywordMap[keyword] = 1;
+        }
+      });
+    }
+    );
+    const extractedWords = Object.keys(keywordMap)
+      .filter(keyword => keyword.length > 0) // Filtra palavras vazias
+      .map((keyword) => ({
+        text: keyword,
+        value: keywordMap[keyword] * 10,
+    }));
+    console.log('Palavras extraídas:', extractedWords);
+    return extractedWords  
+  }
+
   useEffect(() => {
-    const topWords = getTopWords(words, 10);
+    const topWords = getTopWords(extractWords(), 10);
     
     const linhasDePesquisa = topWords.map(palavra => ({
       src: cinza, // terá que ser gerado ou então mudarmos a forma de colocar

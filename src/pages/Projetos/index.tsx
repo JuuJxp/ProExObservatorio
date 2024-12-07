@@ -6,55 +6,7 @@ import { NuvemTitle, Subtitle } from './style';
 import WordCloudComponent from '../../components/WordCloud/WordCloud';
 import f1 from '../../assets/figuras/1/1_F3.png'
 import { researchData, ResearchItem } from '../../utils/ResearchData';
-const mapsData = [
-    {
-      image: "https://s3.static.brasilescola.uol.com.br/be/2021/08/1-mapa-fisico-brasil.jpg",
-      date: '01/01/2024',
-      title: 'Título da pesquisa que gerou esse mapa',
-      author: 'Autor: nome do autor que realizou a pesquisa',
-    },
-    {
-      image: "https://www.researchgate.net/publication/354139397/figure/fig1/AS:1060902182846465@1629950199683/Figura-01-Mapa-das-cidades-nas-regioes-hidrograficas-do-estado-de-Santa-Catarina-Fonte.png",
-      date: '01/01/2024',
-      title: 'Título da pesquisa que gerou esse mapa',
-      author: 'Autor: nome do autor que realizou a pesquisa',
-    },
-    {
-      image: "https://aracajumagazine.com.br/uploads/paragraphs/image/52d5183094785c9f.png",
-      date: '01/01/2024',
-      title: 'Título da pesquisa que gerou esse mapa',
-      author: 'Autor: nome do autor que realizou a pesquisa',
-    },
-    {
-      image: "https://escolaeducacao.com.br/wp-content/uploads/2020/04/tipos-de-mapas-mapa-demogr%C3%A1fico.png",
-      date: '01/01/2024',
-      title: 'Título da pesquisa que gerou esse mapa',
-      author: 'Autor: nome do autor que realizou a pesquisa',
-    },
-    // Adicione mais itens conforme necessário
-  ];
 
-  const graphicsData = [
-    {
-      image: f1,
-      date: '01/01/2024',
-      title: 'Título da pesquisa que gerou esse gráfico',
-      author: 'Autor: nome do autor que realizou a pesquisa',
-    },
-    {
-      image: "https://www.guiadoexcel.com.br/wp-content/uploads/2021/09/imagem09.png",
-      date: '01/01/2024',
-      title: 'Título da pesquisa que gerou esse gráfico',
-      author: 'Autor: nome do autor que realizou a pesquisa',
-    },
-    {
-      image: "https://adrianopataro.com.br/wp-content/uploads/2021/09/tipos-de-graficos-do-excel-barras.png",
-      date: '01/01/2024',
-      title: 'Título da pesquisa que gerou esse gráfico',
-      author: 'Autor: nome do autor que realizou a pesquisa',
-    },
-    // Adicione mais itens conforme necessário
-  ];
   const citysData = [
     {
       image: "https://www.passeios.org/wp-content/uploads/2021/02/sao-carlos.jpg",
@@ -68,7 +20,7 @@ const mapsData = [
     },
     {
       image: "https://upload.wikimedia.org/wikipedia/commons/4/4e/Santiago_de_Cali.jpg",
-      date: 'Cali, São Paulo',
+      date: 'Cali',
       showOnlyTitle: true,
     },
     {
@@ -130,14 +82,14 @@ const mapsData = [
     return (
       <>
         <Header />
-        <Title> Mapas Gerados </Title>
+        <Title> Mapas gerados </Title>
         <Carousel items={mapssData} showModal={true}/>
-        <Title> Figuras Geradas </Title>
+        <Title> Gráficos e figuras geradas </Title>
         <Carousel items={graphicssData} showModal={true}/>
         <Title> Cidades pesquisadas </Title>
         <Carousel items={citysData}/>
         <NuvemTitle>
-          <Title> Nuvem de Palavras-chave</Title>
+          <Title> Nuvem de palavras-chave</Title>
           <Subtitle> Gerada através de coleta de teses e dissertações</Subtitle>
         </NuvemTitle>
         <WordCloudComponent/>

@@ -1,6 +1,36 @@
 import React, { useEffect, useState } from 'react';
 import ReactWordcloud from 'react-wordcloud';
 import { responsiveHeight } from '../../utils/responsiveUtils';
+import { researchData, ResearchItem } from '../../utils/ResearchData';
+
+// Extraindo palavras-chave das teses e dissertações
+export const extractKeywords = (researchData: ResearchItem[]) => {
+  const keywordMap: { [key: string]: number } = {};
+
+  researchData.forEach((item) => {
+    // Normalize the keywords by converting to lowercase and removing accents
+    const keywordsArray = item.keywords.split(';').map(keyword => {
+      // Convert to lowercase and trim spaces
+      let normalizedKeyword = keyword.trim().toLowerCase();
+      // Remove accents
+      normalizedKeyword = normalizedKeyword.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
+      return normalizedKeyword;
+    });
+    keywordsArray.forEach((keyword) => {
+      if (keywordMap[keyword]) {
+        keywordMap[keyword] += 1;
+      } else {
+        keywordMap[keyword] = 1;
+      }
+    });
+  });
+
+  return Object.keys(keywordMap).map((keyword) => ({
+    text: keyword,
+    value: keywordMap[keyword] * 10,
+  }));
+};
+
 
 // Dados de exemplo para a nuvem de palavras
 export const words = [
@@ -20,10 +50,17 @@ export const words = [
 const colors = ['#3ba6d7', '#02000a', '#02203a', '#24a4c4', '#1c3166'];
 
 const WordCloudComponent: React.FC = () => {
+  const [wordss, setWords] = useState<{ text: string; value: number }[]>([]);
+
+  useEffect(() => {
+    // Extract keywords and set them as words for the word cloud
+    const extractedWords = extractKeywords(researchData);
+    setWords(extractedWords);
+  }, []);
   return (
     <div style={{ height: responsiveHeight(500), width: '100%', marginTop:responsiveHeight(30) }}>
       <ReactWordcloud
-        words={words}
+        words={wordss}
         options={{ 
           rotations: 1,
           rotationAngles: [0, 0],
