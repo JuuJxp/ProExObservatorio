@@ -21,19 +21,19 @@ const teamData: TeamSection[] = [
   {
     title: 'Professores',
     members: [
-      { src: cinza, label: 'Luciana Márcia Gonçalves', cargo: 'Professora' },
-      { src: cinza, label: 'Elza Luli Miyaska', cargo: 'Professora' },
+      { src: 'https://www.ppgeu.ufscar.br/pt-br/assets/imagens/docentes/luciana.jpg/@@images/6672d9a5-658a-4270-a9b9-c4d37f9ea6fd.jpeg', label: 'Luciana Márcia Gonçalves', cargo: 'Professora' },
+      { src: 'https://www.ppgeu.ufscar.br/pt-br/assets/imagens/docentes/elza-miyasaka.jpg/@@images/b6c065f7-ab91-44b2-aecf-6413fdfbee65.jpeg', label: 'Elza Luli Miyaska', cargo: 'Professora' },
     ]
   },
   {
     title: 'Atuantes no projeto',
     members: [
-      { src: cinza, label: 'Cláudio Robert Pierini', cargo: 'Pós-doutorando' },
-      { src: cinza, label: 'Tatiane Ferreira Olivatto', cargo: 'Doutoranda' },
-      { src: cinza, label: 'Natasha Nême Gonçalves de Almeida', cargo: 'Mestranda' },
+      { src: 'https://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4584076E4', label: 'Cláudio Robert Pierini', cargo: 'Pós-doutorando' },
+      { src: 'https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=o6k5BgQAAAAJ&citpid=3', label: 'Tatiane Ferreira Olivatto', cargo: 'Doutoranda' },
+      { src: 'https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=L_3ciLAAAAAJ&citpid=2', label: 'Natasha Nême Gonçalves de Almeida', cargo: 'Mestranda' },
       { src: pri, label: 'Priscila Kauana Barelli Forcel', cargo: 'Mestranda' },
-      { src: cinza, label: 'Sandra Batista Medeiros', cargo: 'Doutoranda' },
-      { src: cinza, label: 'Gabriella Barreiros da Silva', cargo: 'Mestranda' },
+      { src: 'https://0.academia-photos.com/291307058/138241928/127709522/s200_sandra.batista_medeiros.jpeg', label: 'Sandra Batista Medeiros', cargo: 'Doutoranda' },
+      { src: 'cinza', label: 'Gabriella Barreiros da Silva', cargo: 'Mestranda' },
       { src: cinza, label: 'Julia Neves de Andrade', cargo: 'Doutoranda' },
       { src: cinza, label: 'Julia Tavares dos Santos', cargo: 'Graduanda' },
     ]

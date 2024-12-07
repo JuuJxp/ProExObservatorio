@@ -19,7 +19,6 @@ const AppRoutes: React.FC = () => {
         <Route path="/projects" element={<Projects />} />
         <Route path="/extras" element={<Extras />} />
         <Route path="/research" element={<Research />} />
-        {/* Adicione outras rotas aqui para redirecionamento de telas */}
       </Routes>
     </Router>
   );

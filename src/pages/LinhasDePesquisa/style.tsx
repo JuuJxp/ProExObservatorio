@@ -38,6 +38,7 @@ export const Linha = styled.div`
     align-items: center;
     margin-bottom: ${rh(20)};
     text-align: center;
+    max-width: ${rw(200)};
 `;
 
 export const Group = styled.div`
